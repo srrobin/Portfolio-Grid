@@ -25,17 +25,17 @@ const CustomBlog = ({ title, setTitle, cards, setCards }) => {
         setCards([
             ...cards,
             {
-                imageUrl: '',
-                alt: '',
+                imageUrl: 'http://placehold.it/200x200',
+                alt: 'image alt ',
                 imageTitle: 'Image title',  
-                description: 'Here Image Short Description', 
+                description: ' Here Image Short Description', 
                 imageHeight: 140,
                 imageWidth: 250,
                 borderRadius: 0,
-                opacity: 100,  // Default to fully opaque
+                opacity: 100,
                 zoom: 0,
                 grayscale: 0
-            }
+              }
         ]);
     };
 
@@ -107,7 +107,7 @@ const CustomBlog = ({ title, setTitle, cards, setCards }) => {
                                 </Form.Group>
 
                                 <Form.Group controlId="imageHeight" className="mt-3">
-                                    <Form.Label>Image Height ({Math.round((card.imageHeight / 500) * 100)} px)</Form.Label>
+                                    <Form.Label>Image Height ({Math.round((card.imageHeight))} px)</Form.Label>
                                     <Form.Range
                                         min={140}
                                         max={500}
@@ -117,7 +117,7 @@ const CustomBlog = ({ title, setTitle, cards, setCards }) => {
                                 </Form.Group>
 
                                 <Form.Group controlId="imageWidth" className="mt-3">
-                                    <Form.Label>Image Width ({Math.round((card.imageWidth / 500) * 100)} px)</Form.Label>
+                                    <Form.Label>Image Width ({Math.round((card.imageWidth) )} px)</Form.Label>
                                     <Form.Range
                                         min={250}
                                         max={500}
