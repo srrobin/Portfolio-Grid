@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProtfolioBlog from './ProtfolioBlog';
-import CustomBlog from './CustomBlog';
+import ProtfolioBlock from './ProtfolioBlock';
+import CustomBlock from './CustomBlock';
 
 const MainGrid = () => {
   const [title, setTitle] = useState("Page Title Here"); 
@@ -22,7 +22,7 @@ const MainGrid = () => {
   return (
     <div className='protfoli__grid'>
       <div className='custom_grid'>
-        <CustomBlog 
+        <CustomBlock 
           title={title} 
           setTitle={setTitle} 
           cards={cards} 
@@ -31,7 +31,7 @@ const MainGrid = () => {
       </div>
       
       <div className='protfolio_grid'>
-        <ProtfolioBlog 
+        <ProtfolioBlock 
           title={title} 
           cards={cards} 
         />
