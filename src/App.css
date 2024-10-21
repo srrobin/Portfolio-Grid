@@ -1,38 +1,82 @@
-.App {
+/* protfolio grid */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+.protfoli__grid{
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+
+.custom_grid{
+ background: #ddd;
+ height: 100vh;
+ overflow-x:hidden;
+ overflow-y: auto;
+ padding: 20px;-ms-overflow-style: none;  
+ scrollbar-width: none;  
+
+}
+.custom_grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.protfolio_grid{
+ padding: 40px;
+ height: 100vh;
+ overflow-x:hidden;
+ overflow-y: scroll;
+}
+
+.grid__title {
   text-align: center;
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid__title span{
+  text-transform: uppercase;
+  color: #5f62fe;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid__image{ 
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  gap: 20px;
 }
+.single__grid__card{ 
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+figure{
+  overflow: hidden;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.single__grid__card img{}
+.grid__card__title {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 20px;
+}
+.grid__card__disc {
+  text-transform: capitalize;
+}
+.add__image__area{
+  margin-top: 10px;
 }
