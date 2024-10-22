@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Accordion, Button, Form } from 'react-bootstrap';
+import { AiOutlineDeleteRow , AiFillEdit} from "react-icons/ai";
+import { BiSolidEdit } from "react-icons/bi";
 
 const CustomBlog = ({ title, setTitle, cards, setCards }) => {
+    const [hover, setHover] = useState(false);
     const handleImageUpload = (index, e) => {
         const file = e.target.files[0];
         if (file) {
@@ -56,7 +59,38 @@ const CustomBlog = ({ title, setTitle, cards, setCards }) => {
                 <Accordion defaultActiveKey="0">
                     {cards.map((card, index) => (
                         <Accordion.Item eventKey={index.toString()} key={index}>
-                            <Accordion.Header>Image Card {index + 1}</Accordion.Header>
+                            <Accordion.Header>
+                                <span 
+                                     style={{
+                                        display:"flex",
+                                        alignItems:"center",
+                                        gap:"10px"
+                                      }}
+                                >
+
+                                <> 
+                                Image Card {index + 1}  
+                                </>
+                                <BiSolidEdit  size={24}  style={{
+                                    color: "#0244a5"
+                                    
+                                }} 
+                                /> 
+                                <AiOutlineDeleteRow size={24} style={{
+                                    color: "#f00"
+                                    
+                                }} 
+                                />
+                                {/* <AiOutlineDeleteRow size={24} style={{
+                                    color: hover ? 'blue' : 'red',
+                                    transition:"all .50s ease"
+                                    
+                                }} 
+                                onMouseEnter={() => setHover(true)}
+                                onMouseLeave={() => setHover(false)}
+                                />  */}
+                                </span>
+                                </Accordion.Header>
                             <Accordion.Body>
                                 <Form.Group controlId="imageUpload">
                                     <Form.Label>Upload Image or Use Image URL</Form.Label>
